@@ -53,12 +53,14 @@ const CheckoutButton = ({ onCheckout, disabled, isLoading }: Props) => {
                 </Button>
             </DialogTrigger>
             <DialogContent className="max-w-[425px] md:min-w-[700px] bg-gray-50">
-                <DialogTitle className="hidden">
+                {/* for avoiding errors, Dialog Title and Description are added */}
+                <DialogTitle className="hidden"> 
                     Confirm Delivery Details
                 </DialogTitle>
                 <DialogDescription className="hidden">
                     Confirm your delivery details before proceeding 
                 </DialogDescription>
+                
                 <UserProfileForm
                     currentUser={currentUser}
                     onSave={onCheckout}
