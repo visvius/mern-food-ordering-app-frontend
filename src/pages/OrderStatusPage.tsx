@@ -14,9 +14,12 @@ const OrderStatusPage = () => {
         return "No orders found";
     }
 
+    //display orders with lastest orders on top
+    const sortedOrders = [...orders].reverse();
+
     return (
         <div className="space-y-10">
-            {orders.map((order) => (
+            {sortedOrders.map((order) => (
                 <div
                     className="space-y-10 bg-gray-50 p-10 rounded-lg"
                     key={order._id}

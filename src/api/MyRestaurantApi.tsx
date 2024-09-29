@@ -136,7 +136,10 @@ export const useGetMyRestaurantOrders = () => {
 
     const { data: orders, isLoading } = useQuery(
         "fetchMyRestaurantOrders",
-        getMyRestaurantOrdersRequest
+        getMyRestaurantOrdersRequest,
+        {
+            refetchInterval: 5000,
+        }
     );
 
     return { orders, isLoading };

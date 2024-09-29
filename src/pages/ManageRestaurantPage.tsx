@@ -17,6 +17,8 @@ const ManageRestaurantPage = () => {
 
     const { orders } = useGetMyRestaurantOrders();
 
+    const sortedOrders = orders ? [...orders].reverse(): null ;
+
     const isEditing = !!restaurant; // find boolean value
 
     return (
@@ -34,7 +36,7 @@ const ManageRestaurantPage = () => {
                 <h2 className="text-2xl font-bold">
                     {orders?.length} active orders
                 </h2>
-                {orders?.map((order) => (
+                {sortedOrders?.map((order) => (
                     <OrderItemCard order={order} key={order._id} />
                 ))}
             </TabsContent>
